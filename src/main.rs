@@ -9,7 +9,7 @@ async fn main() {
     HttpServer::new(|| {
         let tera =
             Tera::new(
-                concat!(env!("CARGO_MANIFEST_DIR"), "/templates/**/*")
+                concat!(env!("CARGO_MANIFEST_DIR"), "/templates/**/*.html")
             ).unwrap();
 
         App::new()
@@ -18,7 +18,7 @@ async fn main() {
             .service(views::rolled)
             .service(views::joke)
     })
-    .bind("127.0.0.1:8080").unwrap()
+    .bind(("0.0.0.0", 8000)).unwrap()
     .run()
     .await.unwrap()
 }
