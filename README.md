@@ -6,3 +6,6 @@ Ensure that you have Rust and Cargo installed. Run `cargo build` to build the de
 respectively.
 ## Docker
 Build the docker image by issuing e.g. `docker build -t buttonsapp .`. Note that the webapp runs on port 8000, so for running the app via docker you'd use e.g. `docker run --rm -it -p 8000:8000 buttonsapp`.
+## Heroku
+The app can also be run on Heroku, [here](https://buttonsappwebmaster.herokuapp.com/), if you don't care to run it from your 
+machine.
