@@ -4,6 +4,13 @@ use tera::Tera;
 mod views;
 
 
+fn port() -> u16 {
+    std::env::var("PORT")
+        .ok()
+        .and_then(|p| p.parse().ok())
+        .unwrap_or(8000)
+}
+
 #[actix_web::main]
 async fn main() {
     HttpServer::new(|| {
@@ -18,7 +25,7 @@ async fn main() {
             .service(views::rolled)
             .service(views::joke)
     })
-    .bind(("0.0.0.0", 8000)).unwrap()
+    .bind(("0.0.0.0", port())).unwrap()
     .run()
     .await.unwrap()
 }
