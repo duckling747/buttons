@@ -9,3 +9,5 @@ Build the docker image by issuing e.g. `docker build -t buttonsapp .`. Note that
 ## Heroku
 The app can also be run on Heroku, [here](https://buttonsappwebmaster.herokuapp.com/), if you don't care to run it from your 
 machine.
+## Docker Hub
+The app is in docker hub, if for some reason you don't want to compile it and don't want to use Heroku. Just use `docker run --rm -d -p 80:8000 poweruserdockerman/buttonsapp` and go to localhost with e.g. your browser to have that sweet excitement in your life.
