@@ -3,7 +3,7 @@ services:
   buttons:
     image: poweruserdockerman/buttonsapp
     ports:
-      - 8000:80
+      - 80:8000
     container_name: buttons
   watchtower:
     image: containrrr/watchtower
