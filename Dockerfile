@@ -10,4 +10,8 @@ WORKDIR /usr/src/buttons
 COPY --from=build /usr/src/buttons/templates /usr/src/buttons/templates
 ENV LD_LIBRARY_PATH="/usr/lib"
 EXPOSE 8000
+RUN adduser -D app && \
+    chown -R app /usr/src/buttons/templates && \
+    chown -R app /usr/local/bin/buttons
+USER app
 CMD ["buttons"]
